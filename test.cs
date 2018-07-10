@@ -16,7 +16,7 @@ namespace AESFileEncrypt
             aes.Padding = PaddingMode.Zeros;
             aes.Mode = CipherMode.ECB;
             ICryptoTransform encryptor = aes.CreateEncryptor(aes.Key, aes.IV);
-            byte[] data = Encoding.ASCII.GetBytes("This is a secret !");
+            byte[] data = Encoding.ASCII.GetBytes(args[1]);
 
             using (MemoryStream ms = new MemoryStream())
             {
